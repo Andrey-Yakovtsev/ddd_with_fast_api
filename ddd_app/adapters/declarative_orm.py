@@ -32,8 +32,6 @@ class Address(Base):
     post_code: Mapped[int] = mapped_column(Integer())
     house: Mapped[int] = mapped_column(Integer())
     apartment: Mapped[int] = mapped_column(Integer())
-    user: Mapped["User"] = relationship(back_populates="addresses")
-    user_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
 
 
 def start_declarative_mappers(engine):

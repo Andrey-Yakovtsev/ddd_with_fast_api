@@ -17,8 +17,8 @@ class SqlAlchemyRepository(AbstractRepository):
     def __init__(self, session):
         self.session = session
 
-    def add(self, user):
-        self.session.add(user)
+    def add(self, entry):
+        self.session.add(entry)
 
     def get(self, reference):
         return self.session.query(models.User).filter_by(id=reference).one()
